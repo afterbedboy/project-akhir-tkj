@@ -1,0 +1,208 @@
+
+/* ----------------------------------assets---------------------------------- */ 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,600&family=Playfair+Display&display=swap');
+
+:root{
+    /* elements */
+    --background: #fffffe;
+    --headline: #2b2c34;
+    --paragraph: #2b2c34;
+    --button: #6246ea;
+    --buttonText: #fffffe;
+
+    /* ilustration */
+    --stroke: #2b2c34;
+    --main: #fffffe;
+    --highlight: #6246ea;
+    --logo: #4361ee;
+    --secondary: #d1d1e9;
+    --tertiary: #e45858;
+   }    
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica', sans-serif;
+}
+
+
+/* styling for navbar */
+nav{
+    width: 100%;
+    /* padding: 45px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-txt{
+    margin-right: 4vw;
+    font-size: 2.4vw;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--logo);
+}
+span.logo{
+    color: #fff;
+    background-color: var(--logo);
+    border-radius: 18px 2px 8px 2px;
+    padding: 0 4px;
+}
+.fa-arrow-left{
+    margin-left: 4vw;
+    font-size: 2.4vw;
+}
+
+
+
+/* styling for content */
+.content{
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    align-items: center;
+}
+p.content-p{
+    line-height: 1.4;
+    color: var(--paragraph);
+}
+ul li{
+   color: var(--paragraph); 
+   line-height: 1.4;
+}
+li.check{
+    list-style: none;
+}
+.fa-circle-check{
+    font-size: 18px;
+    color: var(--paragraph);
+}
+.content-container{
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+div.web-design-img, 
+div.graphic-design-img, 
+div.content-creation-img{
+    width: 100%;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-size: cover; */
+}
+div.web-design-img{background-image: url(../img/web-design.jpg);}
+div.content-creation-img{background-image: url(../img/content-creation.jpg);}
+div.graphic-design-img{background-image: url(../img/graphic-design.jpg);}
+.column-items{
+    height: 150px;
+    /* background-color: gray; */
+    display: flex;
+    padding-right: 20px;
+}
+
+
+
+.offer{
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: 
+        linear-gradient(to top, rgba(0, 100, 255, 1),  rgba(0,100,255,0.4  ))
+        ,url(../img/sea-background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+}
+.offer > h1{
+    margin-bottom: -10px;
+    color: #fff;
+}
+.offer > p{
+    color: #fff;
+}
+.offer-container{
+    margin-top: -20px;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: gainsboro;  */
+}
+.offer-h2{
+    color: var(--tertiary);
+}
+.offer-card{
+    width: 350px;
+    /* height: 80%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 5px 10px 10px rgba(0,0,0,0.2);
+    padding: 20px;
+    margin: 0 20px;
+    border-radius: 40px 0 20px 0;
+    transition: .4s ease-in-out 0s;
+}
+.offer-card:hover{
+    transform: scale(1.1);
+}
+.offer-list{
+    text-align: center;
+}
+.offer-list > p{
+    padding: 0 10px;
+    font-size: 16   px;
+    color: var(--paragraph);
+}
+.offer-button{
+    border: none;
+    background-color: var(--logo);
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #fff;
+}
+.offer-price{
+    font-weight: bold;
+    color: var(--tertiary);
+}
+hr{
+    border: none;
+    width: 80%;
+    height: 1px;
+    background-color: var(--logo) ;
+}
+
+
+
+
+ /* styling for footer */
+ footer{
+    width: 100%;
+    /* background-color: gray; */
+    padding: 3.4vw 0;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: aquamarine; */
+}
+
+.tentang, .footer-copyright{
+    font-family: 'Helvetica';
+    font-style: italic;
+    color: gray;
+    font-size: 18px;
+}
+.tentang{margin-left: 4vw;}
+.footer-copyright{margin-right: 4vw;}

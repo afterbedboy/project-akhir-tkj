@@ -1,0 +1,405 @@
+    /* ----------------------------------assets---------------------------------- */ 
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,600&family=Playfair+Display&display=swap');
+
+    :root{
+        --buttonColor: #1d3557;
+        --buttonActive: #457b9d;
+        --textSpan: #fff3b0;
+        --textSecondary: gray;
+        --textPrimary: #22223b;
+        --logo: #4361ee;
+        --secondary: #d1d1e9;
+        --tertiary: #e45858;
+       }
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* header-start */
+.header{
+    width: 100%;
+    height: 400px;
+    background-image: 
+        linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)),
+        url(../image/classroom.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-h1{
+    font-size: 45px;
+    color: #fff;
+}
+
+.header-p{
+    margin-top: -20px;
+    color: #fff;
+}
+
+
+
+   /* styling for navabar */
+   nav{
+    width: 100%;
+    height: 10vh;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+    display: flex;
+    position: sticky;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 0;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 10;
+}
+
+/* .logo{
+    background-color: gainsboro;
+    width: 80px;
+    height: 100%;
+    margin-left: 40px;
+} */
+
+p.logo-txt{
+    margin-left: 4vw;
+    font-size: 2.4vw;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--logo);
+    transition: .4s ease-in-out 0s;
+    animation: logomove .8s 4s ease-in-out  ;
+}
+@keyframes logomove{
+    from{transform: rotateY(0);}
+    to{transform: rotateY(360deg);}
+}
+.logo-txt:hover{
+    transform: scale(1.2);
+}
+span.logo{
+    color: #fff;
+    background-color: var(--logo);
+    border-radius: 18px 2px 8px 2px;
+    padding: 0 4px;
+}
+.menu ,.hamburger-menu{
+    margin-right: 4vw;
+    font-size: 1.8vw;
+}
+
+.hamburger-menu{
+    color: gray;
+}
+
+a.nav{
+    margin-left: 3vw;
+    text-decoration: none;
+    padding: 4px;
+    font-size: 1.4vw;
+    border-radius: 4px;
+    color: gray;
+    transition: .2s ease-in-out 0s;    
+}
+a.nav:hover{
+    color: #fff;
+    background-color: var(--logo);
+}
+.overlay{
+    height: 0;
+    width: 0;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: .5s;
+    transition-delay: .6s;
+    border-radius: 35% 0 35% 35%;
+}
+
+.overlay-content{
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    transition: transfrom .2s;
+}
+
+.overlay-content > a:hover{
+    color: #fff;
+    transform: scale(1.2);
+}
+
+.overlay a{
+    padding: 8px;
+    text-decoration: none;
+    font: 36px;
+    color: #818181;
+    display: block;
+    transition: .2s ease-in-out;
+}
+
+.overlay .closebtn{
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+.closebtn:hover{
+    animation: mymove alternate-reverse .4s;
+}
+
+@keyframes mymove{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(180deg);
+    }
+}
+
+@media screen and (max-width: 450px){
+        .overlay a{font-size: 20px;}
+        .overlay .closebtn{
+            font-size: 40px;
+            top: 15px;
+            right: 25px;
+        }
+        
+    }
+
+
+    
+
+    
+.motto-container{
+    margin-top: 50px;
+    padding: 10px 0;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aliceblue; */
+}
+.motto-container i{
+    font-size: 35px;
+}
+.motto-p{
+    font-family: 'Plafair Display';
+    font-size: 35px;
+    text-align: center;
+    width: 65%;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-container{
+    width: 100%;
+    height: 800px;
+    padding: 10px 0;
+    /* background-color:antiquewhite; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image{
+    width: 90%;
+    height: 80%;
+    background-image: url(../image/mikora-media.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.about-information{
+    width: 90%;
+    height: 25%;
+    /* background-color: #818181; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-box{
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+ /* styling for quote */
+ .quote-container{
+    width: 100%;
+    background-color: gainsboro;
+    margin-bottom: 5%;
+    text-align: center;
+    padding: 2% 0;
+}
+
+p.quote-txt{
+    padding: 0 20%;
+    font-family: 'Playfair display';
+    font-size: 2.5vw;
+    margin-top: -0.2vh;
+}
+
+.profile-img{
+    margin: 0 auto;
+    width: 65px; /*fixed size*/
+    height: 65px;
+    background-image: url(../image/avatar.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+}
+p.profile-name{
+    color: gray;
+    font-size: 1.2vw;
+}
+
+
+ /* styling for footer */
+ footer{
+    width: 100%;
+    /* background-color: gray; */
+    padding: 3.4vw 0;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: aquamarine; */
+}
+
+.tentang, .footer-copyright{
+    font-family: 'Helvetica';
+    font-style: italic;
+    color: gray;
+    font-size: 18px;
+}
+.tentang{margin-left: 4vw;}
+.footer-copyright{margin-right: 4vw;}
+
+/* Media query untuk desktop */
+@media (min-width: 1025px) {
+    .hamburger-menu{
+        display: none;
+    }
+    .menu{
+        display: block;
+    }
+}
+
+/* Media query untuk tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .hamburger-menu{
+        display: block;
+    }
+    .menu{
+        display: none;
+    }
+}
+
+/* Media query untuk perangkat mobile */
+@media (max-width: 767px) {
+    /* header */
+    .header{
+        height: 100vh;
+    }
+    p.logo-txt{
+        font-size: 6vw;
+    }
+    span.logo{
+        border-radius: 9px 2px 4px 2px;
+    }
+    span.hamburger-menu{
+        font-size: 6vw;
+    }
+
+    /* navabar */
+    .hamburger-menu{
+        display: block;
+    }
+    .menu{
+        display: none;
+    }
+
+    /* motto */
+    .motto-container{
+        margin-top: 0;
+        height: 100vh;
+        /* background-color: #4361ee; */
+    }
+    .motto-container i{
+        font-size: 16px;
+    }
+    .motto-p{
+        width: 80%;
+        font-size: 16px;
+    }
+    
+    /* about */
+    .about-container{
+        height: 550px;
+    }
+    .about-image{
+        height: 50%;
+    }
+    .about-information{
+        height: 100%;
+        flex-direction: column;
+    }
+    .about-box h2{
+        font-size: 18px;
+    }
+    .about-box p{
+        font-size: 12px;
+    }
+
+    /* quote */
+    p.quote-txt{
+        padding: 0 10%;
+        font-size: 16px;
+    }
+    .profile-img{
+        width: 45px;
+        height: 45px;
+    }
+    p.profile-name{
+        font-size: 12px;
+    }
+
+    /* footer */
+    footer{
+        /* backgr<i class="fa-solid fa-crown"></i>ound-color: #1d3557; */
+        flex-direction: column;
+        text-align: center;
+    }
+    .tentang, .footer-copyright{
+        font-size: 12px;
+        padding: 1.4vw 0;
+    }   
+
+
+}
+

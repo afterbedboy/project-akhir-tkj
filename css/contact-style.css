@@ -1,0 +1,578 @@
+/* ----------------------------------assets---------------------------------- */ 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,600&family=Playfair+Display&display=swap');
+
+:root{
+    --buttonColor: #1d3557;
+    --buttonActive: #457b9d;
+    --textSpan: #fff3b0;
+    --textSecondary: gray;
+    --textPrimary: #22223b;
+    --logo: #4361ee;
+    --secondary: #d1d1e9;
+    --tertiary: #e45858;
+   }
+
+body{
+margin: 0;
+padding: 0;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* header-start */
+.header{
+width: 100%;
+height: 400px;
+background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)),
+    url(../image/classroom.png);
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.header-h1{
+font-size: 45px;
+color: #fff;
+}
+
+.header-p{
+margin-top: -20px;
+color: #fff;
+}
+
+
+
+/* styling for navabar */
+nav{
+    width: 100%;
+    height: 10vh;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+    display: flex;
+    position: sticky;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 0;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 10;
+}
+
+/* .logo{
+    background-color: gainsboro;
+    width: 80px;
+    height: 100%;
+    margin-left: 40px;
+} */
+
+p.logo-txt{
+    margin-left: 4vw;
+    font-size: 2.4vw;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--logo);
+    transition: .4s ease-in-out 0s;
+    animation: logomove .8s 4s ease-in-out  ;
+}
+@keyframes logomove{
+    from{transform: rotateY(0);}
+    to{transform: rotateY(360deg);}
+}
+.logo-txt:hover{
+    transform: scale(1.2);
+}
+span.logo{
+    color: #fff;
+    background-color: var(--logo);
+    border-radius: 18px 2px 8px 2px;
+    padding: 0 4px;
+}
+.menu ,.hamburger-menu{
+    margin-right: 4vw;
+    font-size: 1.8vw;
+}
+
+.hamburger-menu{
+    color: gray;
+}
+
+a.nav{
+    margin-left: 3vw;
+    text-decoration: none;
+    padding: 4px;
+    font-size: 1.4vw;
+    border-radius: 4px;
+    color: gray;
+    transition: .2s ease-in-out 0s;    
+}
+a.nav:hover{
+    color: #fff;
+    background-color: var(--logo);
+}
+.overlay{
+    height: 0;
+    width: 0;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: .5s;
+    transition-delay: .6s;
+    border-radius: 35% 0 35% 35%;
+}
+
+.overlay-content{
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    transition: transfrom .2s;
+}
+
+.overlay-content > a:hover{
+    color: #fff;
+    transform: scale(1.2);
+}
+
+.overlay a{
+    padding: 8px;
+    text-decoration: none;
+    font: 36px;
+    color: #818181;
+    display: block;
+    transition: .2s ease-in-out;
+}
+
+.overlay .closebtn{
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+.closebtn:hover{
+    animation: mymove alternate-reverse .4s;
+}
+
+@keyframes mymove{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(180deg);
+    }
+}
+
+@media screen and (max-width: 450px){
+        .overlay a{font-size: 20px;}
+        .overlay .closebtn{
+            font-size: 40px;
+            top: 15px;
+            right: 25px;
+        }
+        
+    }
+
+
+/* styling for contact main container */
+.contact{
+    width: 100%;
+    height: 100vh;
+    /* background-color: gray; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-container{
+    width: 90%;
+    height: 100%;
+    /* background-color: gainsboro; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-left-right{
+    /* background-color: wheat; */
+    height: 90%;
+    width: 100%;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h1.contact-title{
+    color: #000;
+    width: 100%;
+    /* background-color: #007bff; */
+}
+
+
+/* contact start */
+.contact-box{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #007bff; */
+}
+  form {
+    width: 90%;
+    height: 90%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  .form-group{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+    /* background: #000;    */
+  }
+  
+  input, textarea{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    outline: none;
+    transition: .4s ease-in-out 0s;
+  }
+  input {
+    width: 100%;
+    height: 60%;
+  }
+  textarea{
+    width: 100%;
+    height: 100%;
+    font-family: 'Helvetiva', sans-serif;
+  }
+
+  input:focus{
+    color: #e45858;
+    font-size: 18px;
+    border-bottom: 1px solid var(--textPrimary);
+  }
+  textarea:focus{
+    color: #e45858;
+    font-size: 18px;
+    border-bottom: 1px solid var(--textPrimary);
+  }
+  .submit-button {
+    display: block;
+    margin-top: 20px;
+    width: 35%;
+    padding: 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: #e45858;
+  }
+
+
+
+/* address container */
+.address-box{
+    width: 100%;
+    height: 90%;
+    /* background-color: #007bff; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: .4s ease-in-out 0s;
+}
+.address-box:hover{
+    color: var(--tertiary);
+}
+.left-container{
+    margin-bottom: 10px;
+    width: 95%; 
+    height: 30%;
+    /* background-color: red; */
+}
+.socmed-container{
+    width: 95%;
+    text-align: left;
+}
+.socmed-container i{
+    font-size: 48px;
+    color: var(--logo);
+}
+
+
+
+/* team-container-start */
+.team-container{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    /* background-color: #818181; */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.team-box{
+    width: 80%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: gainsboro; */
+}
+
+.team-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 30%;
+    height: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+    transition: .4s ease-in-out 0s;
+  }
+.team-card:hover{
+    transform: scale(1.1);
+}
+.card-image{
+    width: 100%;
+    height: 60%;
+    background-image: url(../image/avatar.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card-information{
+    width: 100%;
+    padding-bottom: 30px;
+}
+  
+.card-information h1{
+    margin-bottom: -15px;
+}
+p.title {
+    color: grey;
+    font-size: 18px;
+}
+
+p.edu{
+    font-weight: bold;
+}
+
+.fa-brands{
+    font-size: 28px;
+    color: black;
+}
+.fa-brands:hover{
+    color: gray;
+}
+
+
+
+
+/* styling for quote */
+.quote-container{
+    width: 100%;
+    background-color: var(--secondary);
+    margin-bottom: 5%;
+    text-align: center;
+    padding: 2% 0;
+}
+
+p.quote-txt{
+    padding: 0 20%;
+    font-family: 'Playfair display';
+    font-size: 2.5vw;
+    margin-top: -0.2vh;
+}
+
+.profile-img{
+    margin: 0 auto;
+    width: 65px; /*fixed size*/
+    height: 65px;
+    background-image: url(../image/avatar.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+}
+p.profile-name{
+    color: gray;
+    font-size: 1.2vw;
+}
+
+
+
+ /* styling for footer */
+ footer{
+    width: 100%;
+    /* background-color: gray; */
+    padding: 3.4vw 0;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: aquamarine; */
+}
+
+.tentang, .footer-copyright{
+    font-family: 'Helvetica';
+    font-style: italic;
+    color: gray;
+    font-size: 18px;
+}
+.tentang{margin-left: 4vw;}
+.footer-copyright{margin-right: 4vw;}
+
+
+
+/* Media query untuk desktop */
+@media (min-width: 1025px) {
+    .hamburger-menu{
+        display: none;
+    }
+    .menu{
+        display: block;
+    }
+}
+
+/* Media query untuk tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .hamburger-menu{
+        display: block;
+    }
+    .menu{
+        display: none;
+    }
+}
+
+/* Media query untuk perangkat mobile */
+@media (max-width: 767px) {
+    /* header */
+    .header{
+        height: 100vh;
+    }
+    p.logo-txt{
+        font-size: 6vw;
+    }
+    span.logo{
+        border-radius: 9px 2px 4px 2px;
+    }
+    span.hamburger-menu{
+        font-size: 6vw;
+    }
+
+    /* navabar */
+    .hamburger-menu{
+        display: block;
+    }
+    .menu{
+        display: none;
+    }
+
+    /* contact */
+    .contact{
+        flex-direction: column;
+        height: 200vh;
+    }
+    .contact-container{
+        flex-direction: column;
+    }
+    h1.contact-title{
+        font-size: 20px;
+    }
+    .left-container h3{
+        font-size: 18px;
+    }
+    .left-container p{
+        font-size: 16px;
+    }
+    input, textarea{
+        font-size: 16px;
+    }
+
+    /* team */
+    .team-container{
+        height: 100vh;
+    }
+    .team-box{
+        flex-direction: column;
+    }
+    .team-card{
+        box-shadow: none;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .card-image{
+        width: 45px;
+        height: 45px;
+        margin: 0 auto;
+        margin-top: 5px;
+        border-radius: 100%;
+    }
+    .card-information{
+        width: 100%;
+        padding-bottom: 5px;
+    }
+    .card-information h1{
+        font-size: 16px;
+    }
+    p.title{
+        font-size: 10px;
+    }
+    p.edu{
+        margin-top: -10px;
+        margin-top: -10px;
+        font-size: 12px;
+    }
+    .fa-brands{
+        font-size: 20px;
+    }
+
+    /* quote */
+    p.quote-txt{
+        padding: 0 10%;
+        font-size: 16px;
+    }
+    .profile-img{
+        width: 45px;
+        height: 45px;
+    }
+    p.profile-name{
+        font-size: 12px;
+    }
+
+    /* footer */
+    footer{
+        /* background-color: #1d3557; */
+        flex-direction: column;
+        text-align: center;
+    }
+    .tentang, .footer-copyright{
+        font-size: 12px;
+        padding: 1.4vw 0;
+    }   
+
+}

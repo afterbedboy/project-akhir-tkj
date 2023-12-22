@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miikora | Content Creation</title>
+    <link rel="stylesheet" href="./css/service-main-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/checkout-styles.css">
+</head>
+<body>
+
+
+
+    <div class="payment-modal" id="paymentModal">
+        <div class="wrapper">
+            <div class="form-container">
+                <div class="info-section">
+                    <h2>Mohon Diperhatikan</h2>
+                    <h3>Detail Kontak</h3>
+                    <p>Mohon lengkapi informasi kontak Anda dengan benar untuk memastikan kami dapat menghubungi Anda dengan mudah terkait proyek ini. Mohon cantumkan:</p>
+                    <ul>
+                        <li>Nama lengkap</li>
+                        <li>Alamat email yang aktif</li>
+                        <li>Nomor telepon yang dapat dihubungi</li>
+                    </ul>
+                    <h3>Detail Proyek</h3>
+                    <p>Untuk memulai proyek dengan lancar, harap berikan detail-detail berikut:</p>
+                    <ul>
+                        <li>Deskripsi proyek secara singkat dan jelas</li>
+                        <li>Spesifikasi fitur yang Anda butuhkan (seperti formulir kontak, integrasi media sosial, dll.)</li>
+                        <li>Referensi (jika ada) dan Konten yang akan dimasukkan ke dalam website (teks, gambar, video, dll.)</li>
+                    </ul>
+                    <h3>Metode Pembayaran :</h3>
+                    <p>Pilih metode pembayaran yang paling sesuai dengan preferensi Anda. Kami menerima pembayaran melalui:</p>
+                    <ul>
+                        <li>Kartu kredit/debit: Mohon cantumkan detail kartu pembayaran, seperti nomor kartu, tanggal kedaluwarsa, dan kode CVV/CVC.</li>
+                    </ul>
+                    <button onclick="showFirstForm()">Mulai</button>
+                </div>
+    
+                <!-- Halaman 1 - Detail Kontak -->
+                <form id="formPage1" class="form-page">
+                    <h2><i class="fa-solid fa-address-book"></i> Detail Kontak</h2>
+                    <p>
+                        Mohon sertakan nama lengkap, email, dan nomor telepon yang valid untuk dapat menghubungi Anda. Terima kasih atas kerja samanya!</p>
+                    <input type="text" id="nama" placeholder="Nama" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="number" id="telepon" placeholder="Nomor Telepon" required>
+                    <button type="button" onclick="validatePage1()">Next</button>
+                </form>
+    
+                <!-- Halaman 2 - Detail Proyek -->
+                <form id="formPage2" class="form-page">
+                    <h2><i class="fa-solid fa-envelope"></i> Detail Proyek</h2>
+                    <p>Tolong berikan deskripsi proyek yang jelas dan lengkap untuk memahami kebutuhan Anda dengan baik. Sertakan informasi tentang tujuan dari proyek ini dan spesifikasi fitur tambahan yang Anda perlukan. Semakin detail deskripsi proyeknya, semakin baik kami dapat menyesuaikan solusi dengan kebutuhan Anda. Terima kasih atas kerjasamanya!</p>
+                    <textarea id="deskripsiProyek" placeholder="Deskripsi Proyek" required></textarea>
+                    <input type="text" id="fiturKhusus" placeholder="Fitur Khusus yang Dibutuhkan">
+                    <button type="button" onclick="validatePage2()">Next</button>
+                </form>
+    
+                <!-- Halaman 3 - Detail Pembayaran -->
+                <form id="formPage3" class="form-page">
+                    <h2><i class="fa-solid fa-credit-card"></i> Detail Pembayaran</h2>
+                    <p>
+                        Mohon isi dengan cermat informasi metode pembayaran, termasuk nama pemilik kartu, nomor kartu 16 digit, tanggal kedaluwarsa, dan kode keamanan CVV/CVC di bagian belakang kartu Anda. Terima kasih atas kerja samanya!</p>
+                    <select id="metodePembayaran">
+                        <option value="RuPay">RuPay</option>
+                        <option value="Visa">Visa</option>
+                        <option value="MasterCard">MasterCard</option>
+                    </select>
+                    <input type="text" id="pemilikKartu" placeholder="Nama Pemilik Kartu" required>
+                    <input type="number"  maxlength="16" id="nomorKartu" placeholder="Nomor Kartu" required>
+                    <div class="split-input">
+                        <input type="date" id="tanggalKadaluarsa" placeholder="MM/YY" required>
+                        <input type="password" id="cvv" placeholder="CVV" required>
+                    </div>
+                    <label class="checkbox-label" style="color: gray;">
+                        <input type="checkbox" id="persetujuan" required>
+                        Saya telah mengisi data dengan benar.
+                    </label>
+                    <button type="submit" onclick="showSuccess()">Submit</button>
+                </form>
+            </div>
+    
+            <div class="order-details" id="orderDetails">
+                <i class="fa-solid fa-circle-check" style="font-size: 48px; color: green;"></i>
+                <h2>Berhasil</h2>  
+                <p>Terima kasih! Pesanan Anda berhasil dikirim. Kami akan menghubungi Anda segera.</p>
+                <!-- Di sini Anda dapat menambahkan informasi terkait pesanan yang berhasil dikirim -->
+                <div class="countdown" id="countdown"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- nav dengan tombol kembali di sisi kiri dan logo di sisi kanan -->
+    <nav>
+        <a href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
+        <a href="../index.html" style="text-decoration: none;"><p class="logo-txt"><span class="logo">Mi!</span>Koora</p></a>
+    </nav>
+
+    <!-- web design dengan judul, gambar, deskripsi, list fitur, list jenis website, dan hightlight pad
+    tipe website dan tool yang digunakan-->
+    <div class="content">
+        <h1>Content Creation Service</h1>
+        <div class="content-container">
+            <div class="content-creation-img"></div>
+            <div class="content-information">
+                <h2 class="content-h2">Kenapa Memilih Kami?</h2>
+                <p class="content-p">
+                    Selamat datang di era konten raja! Kami, tim Content Creation, adalah mitra unggul untuk menciptakan kisah tak terlupakan bagi bisnis Anda di dunia digital. Dengan fokus pada kualitas tinggi, optimasi SEO, dan analisis data, kami membentuk kemitraan kuat yang merangkul visi unik merek Anda. Setiap proyek bersama kami adalah perjalanan kolaboratif untuk menonjolkan bisnis Anda di lautan konten digital. Mari bersama menciptakan keberhasilan dan kesan yang mengesankan! 🚀✨x
+                </p> <!-- deskripsi -->
+                <h2 class="content-h2">Apa Yang Kamu dapat?</h2>
+                <ul class="content-ul"> <!-- fitur yang ditawarkan-->
+                    <li class="check"><i class="fa-solid fa-circle-check"></i>  Dapatkan konten profesional, mulai dari tulisan hingga desain visual.</li>
+                    <li class="check"><i class="fa-solid fa-circle-check"></i> Manfaatkan strategi SEO canggih untuk visibilitas maksimal di mesin pencari.</li>
+                    <li class="check"><i class="fa-solid fa-circle-check"></i> Sesuaikan konten dengan revisi komprehensif sesuai preferensi Anda.</li>
+                    <li class="check"><i class="fa-solid fa-circle-check"></i> Akses dukungan kreatif dan konsultasi untuk strategi pemasaran konten yang efektif. </li>
+                    <li class="check"><i class="fa-solid fa-circle-check"></i> Terima laporan analisis berkala untuk pemahaman mendalam tentang dampak konten terhadap pertumbuhan bisnis Anda.</li>
+                </ul> 
+                <div class="column-items">
+                    <div class="items">
+                        <h2 class="content-h2">Platfrom</h2> <!-- platfrom/tool--> 
+                        <ul class="web-design-ul">
+                            <li>Adobe Creative Cloud</li>
+                            <li>Canva</li>
+                            <li>Corel Draw</li>
+                            <li>Sketch</li>
+                            <li>Figma</li>
+                        </ul>
+                    </div>
+                    <div class="items">
+                        <h2 class="content-h2">Tipe Website</h2> <!-- tipe website -->
+                        <ul class="content-ul">
+                            <li>Video Konten</li>
+                            <li>Grafis Dan Ilustrasi</li>
+                            <li>Tulisan dan Artikel</li>
+                            <li>Fotografi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- offer dengan 3 kartu membentuk kolom, masing - masingnya berisi judul, list benefit, harga dan button-->
+    <div class="offer">
+        <h1>Paket Jasa</h1>
+        <p>Pilih Paket Sesuai Kebutuhan Anda</p>
+
+        <div class="offer-container">
+            <div class="offer-card">
+                <h2 class="offer-h2">Paket Dasar</h2>
+                <div class="offer-list">
+                    <p>Pembuatan konten dasar seperti posting media sosial atau artikel singkat.
+                    </p>
+                    <hr>
+                    <p>Penggunaan gambar dan grafik royalty-free.
+                    </p>
+                    <hr>
+                    <p>2 revisi pada konten.
+                    </p>
+                    <hr>
+                    <p>Konsultasi konsep awal.</p>
+                </div>
+                <p class="offer-price">harga mulai $100</p>
+                <button class="offer-button" onclick="buttonFunction()">Pesan Paket</button>
+            </div>
+    
+            <div class="offer-card">
+                <h2 class="offer-h2">Paket Menengah</h2>
+                <div class="offer-list">
+                    <p>Pembuatan konten yang lebih kompleks seperti artikel mendalam, infografis, atau blog post.
+                    </p>
+                    <hr>
+                    <p>Desain grafis tambahan untuk meningkatkan visual konten.
+                    </p>
+                    <hr>
+                    <p>3-4 revisi pada konten.
+                    </p>
+                    <hr>
+                    <p>Penggunaan gambar dan grafik premium.
+                    </p>
+                </div>
+                <p class="offer-price">Harga mulai $500</p>
+                <button class="offer-button" onclick="buttonFunction()">Pesan Paket</button>
+            </div>
+   
+            <div class="offer-card">
+                <h2 class="offer-h2">Paket Premium</h2>
+                <div class="offer-list">
+                    <p>Pembuatan konten seperti video promosi, panduan multimedia, atau serial blog post.
+                    </p>
+                    <hr>
+                    <p>Desain grafis khusus dan animasi (jika diperlukan).
+                    </p>
+                    <hr>
+                    <p>5-6 revisi pada konten.
+                    </p>
+                    <hr>
+                    <p>Penelitian pasar dan kata kunci untuk optimalisasi SEO.
+                    </p>
+                    <hr>
+                    <p>Penggunaan gambar, grafik, dan musik premium.
+                    </p>
+                </div>
+                <p class="offer-price">Harga mulai $1000</p>
+                <button class="offer-button" onclick="buttonFunction()">Pesan Paket</button>
+            </div>
+        </div>
+    </div>  
+
+    <!-- footer start -->
+    <footer>
+        <a class="tentang" href="./thx.html">Tentang situs ini...</a><!--logo-->
+        <a class="footer-copyright">&copy;mikoramediatama, Hak cipta dimiliki manusia biasa.</a> <!--copyright-->
+    </footer>
+
+    <script src="./script/checkout-script.js"></script>
+    <script src="./script/pop-up-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ucapan Terima Kasih</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        :root{
+            --buttonColor: #1d3557;
+            --buttonActive: #457b9d;
+            --textSpan: #fff3b0;
+            --textSecondary: gray;
+            --textPrimary: #22223b;
+            --logo: #4361ee;
+            --secondary: #d1d1e9;
+            --tertiary: #e45858;
+       }    
+        body{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .all-container{
+            width: 100%;height: 100vh;
+            
+        }
+        .slide-container{
+            position: absolute;
+            top: 0;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            /* background-color: gray; */
+        }
+
+        .mySlides{
+            width: 100%;
+            height: 100%;
+        }
+
+        div.img-1, div.img-2, div.img-3, div.img-4, div.img-5, div.img-6, div.img-7{
+            background-position: center;
+            background-size: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            animation: mymove .8s forwards;
+        }
+        div.img-1{background-image: url(./image/memories/1.jpg);}
+        div.img-2{background-image: url(./image/memories/2.jpg);}
+        div.img-3{background-image: url(./image/memories/3.jpg);}
+        div.img-4{background-image: url(./image/memories/4.jpg);}
+        div.img-5{background-image: url(./image/memories/5.jpg);}
+        div.img-6{background-image: url(./image/memories/6.jpg);}
+
+        .message-container {
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           backdrop-filter: blur(4px);
+           transition: 1s ease-in-out 0s
+            
+        }
+        .message-container:hover{
+            backdrop-filter: blur(0);
+        }
+        .message{
+            width: 50%;
+            height: auto;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 8px 8px var(--tertiary);
+            transition: .4s ease-in-out 0s;
+        }
+        .message:hover{
+            transform: scale(1.2);opacity: 0;
+        }
+        h1{
+            font-family:'Playfair display', sans-serif;
+            color: var(--logo);
+        }
+        p{
+            font-size: 16px;
+            color: var(--textSecondary);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Automatic Slideshow Images (Z_INDEX_0)-->
+    <div class="all-container">
+        <div class="slide-container">
+            <div class="mySlides img-1">
+            </div>
+            <div class="mySlides img-2">
+            </div>
+            <div class="mySlides img-3">
+            </div>
+            <div class="mySlides img-4">
+            </div>
+            <div class="mySlides img-5">
+            </div>
+            <div class="mySlides img-6">
+            </div>
+        </div>
+        <div class="message-container">
+            <div class="message">
+                <!-- Pesan terima kasih -->
+                <h1>Terima Kasih &#x1F90D; &#9996;</h1>
+                <p style="text-align: justify;">
+                    Teruntuk Guru mapel PKK Ahmad Faizul Hakim, S.Kom., Anggota Kelompok : Reval Dwi dan M. Yogik Eka, Teman-Teman, dan Orang Tua, ucapan terima kasih tak terhingga untuk setiap kontribusi, bantuan, dan dukungan yang luar biasa selama proses penyelesaian proyek pembuatan website ini.
+                </p>
+                <p style="text-align: justify;">
+                    Bimbingan yang berharga dari Bapak/Ibu Guru telah memandu kami melalui setiap langkah, sementara kolaborasi solid dari anggota kelompok telah menghasilkan hasil yang luar biasa. Semangat dan dorongan dari teman-teman, serta cinta tanpa batas dari orang tua, telah menjadi tiang penyangga dalam perjalanan kami. Dengan kerjasama, semangat, dan dukungan dari kalian semua, proyek ini berhasil diselesaikan dengan sukses.
+                </p>
+                <p style="text-align: justify;">
+                    Terima kasih atas semua yang telah kalian berikan, ini menjadi bukti nyata bahwa kesuksesan ini adalah hasil dari kerjasama dan dukungan yang luar biasa dari semua pihak.
+                </p>
+                <p style=" text-align:justify;">Mewakili kelompok kami, untuk tugas akhir semester 1, mapel PKK, kelas XII Teknik Komputer Jaringan 2, SMK PGRI 1 Jombang.</p>
+                <br>
+                <div class="left" style="float: left; bottom: 0;  bottom: 0; margin-top: 30px; margin-left: 30px; width: 300px;">
+                    <p style= "text-align:center; font-style: italic; color: var(--logo);">“Education is not preparation for life; education is life itself.”</p>
+                    <p style="text-align:center; margin-top: -10px; font-weight: bold; color: var(--logo);">-John Dewey</p>
+                </div>
+                <div class="left" style="float: right; bottom: 0;">
+                    <img src="./image/gacor.jfif" alt="" srcset="" width="50%" style="margin: 0 auto; display: block; ">
+                    <p style= "text-align:center;">Yafi Mahardika H.</p>
+                    <p style="text-align:center; margin-top: -15px;">Jombang, 21 November 2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+  <script>
+    // Automatic Slideshow - change image every 4 seconds
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 6000);    
+    }
+  </script>
+
+</body>
+</html>

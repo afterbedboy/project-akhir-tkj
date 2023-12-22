@@ -1,0 +1,826 @@
+    
+    
+    
+    /* ----------------------------------assets---------------------------------- */ 
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,600&family=Playfair+Display&display=swap');
+
+    :root{
+        --buttonColor: #1d3557;
+        --buttonActive: #457b9d;
+        --textSpan: #fff3b0;
+        --textSecondary: gray;
+        --textPrimary: #22223b;
+        --logo: #4361ee;
+        --secondary: #d1d1e9;
+        --tertiary: #e45858;
+       }    
+
+    body{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Helvetica';
+        /* background-color: gray; */
+    }
+    
+    
+    /* styling for navabar */
+    nav{
+        width: 100%;
+        height: 10vh;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1% 0;
+        /* position: fixed;
+        top: 0; */
+        background-color: #fff;
+        z-index: 10;
+    }
+    
+    /* .logo{
+        background-color: gainsboro;
+        width: 80px;
+        height: 100%;
+        margin-left: 40px;
+    } */
+
+    p.logo-txt{
+        margin-left: 4vw;
+        font-size: 2.4vw;
+        font-family: 'DM Sans', sans-serif;
+        color: var(--logo);
+        transition: .4s ease-in-out 0s;
+        animation: logomove .8s 4s ease-in-out  ;
+    }
+    @keyframes logomove{
+        from{transform: rotateY(0);}
+        to{transform: rotateY(360deg);}
+    }
+    .logo-txt:hover{
+        transform: scale(1.2);
+    }
+    span.logo{
+        color: #fff;
+        background-color: var(--logo);
+        border-radius: 18px 2px 8px 2px;
+        padding: 0 4px;
+    }
+    .menu ,.hamburger-menu{
+        margin-right: 4vw;
+        font-size: 1.8vw;
+    }
+
+    .hamburger-menu{
+        color: gray;
+    }
+
+    a.nav{
+        margin-left: 3vw;
+        text-decoration: none;
+        padding: 4px;
+        font-size: 1.4vw;
+        border-radius: 4px;
+        color: gray;
+        transition: .2s ease-in-out 0s;    
+    }
+    a.nav:hover{
+        color: #fff;
+        background-color: var(--logo);
+    }
+    .overlay{
+        height: 0;
+        width: 0;
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.9);
+        overflow-x: hidden;
+        transition: .5s;
+        transition-delay: .6s;
+        border-radius: 35% 0 35% 35%;
+    }
+
+    .overlay-content{
+        position: relative;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+        transition: transfrom .2s;
+    }
+
+    .overlay-content > a:hover{
+        color: #fff;
+        transform: scale(1.2);
+    }
+
+    .overlay a{
+        padding: 8px;
+        text-decoration: none;
+        font: 36px;
+        color: #818181;
+        display: block;
+        transition: .2s ease-in-out;
+    }
+
+    .overlay .closebtn{
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+    }
+
+    .closebtn:hover{
+        animation: mymove alternate-reverse .4s;
+    }
+    
+    @keyframes mymove{
+        from{
+            transform: rotate(0deg);
+        }
+        to{
+            transform: rotate(180deg);
+        }
+    }
+
+    @media screen and (max-width: 450px){
+            .overlay a{font-size: 20px;}
+            .overlay .closebtn{
+                font-size: 40px;
+                top: 15px;
+                right: 25px;
+            }
+            
+        }
+
+
+    /* styling for hero */
+    .hero{
+        width: 100%;
+        height: 90vh;
+        background-color: gray;
+        background-image: 
+        linear-gradient(to bottom, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8)),
+        url(../image/classroom.png);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        margin-bottom: 5%;
+    }
+    .hero-container{
+        width: 70%;
+        height: auto;
+        /* background-color: gainsboro; */
+        position: absolute;
+        top: 60%;   
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        animation: heroMove 2s 2s forwards;
+        opacity: 0;
+    }
+    @keyframes heroMove{
+        from{
+            opacity: 0;
+            top: 70%;
+        }
+        to{
+            opacity: 1;
+            top: 60%;
+        }
+    }
+    .pre-title{
+        font-size: 4.4vw;
+        color: #fff;
+        margin-bottom: -0.2vh;
+        font-family: 'Helvetica';
+        font-weight: 200;
+    }
+    span.pre-title{
+        font-style: italic;
+        color: burlywood;
+        padding: 4px;
+        font-weight: 600;
+    }
+    .title{
+        font-size: 6vw;
+        color: #fff;
+
+        overflow: hidden;
+        border-right: 3px solid white;
+        white-space: nowrap;
+        margin: 0 auto;
+        animation: 
+            typing 5.5s steps(40, end),
+            blink-carret .35s step-end infinite;
+        animation-delay: 2s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes typing{
+        from{width: 0%;}
+        to{width: 100%;}
+    }
+    @keyframes blink-carret{
+        from, to{border-color: transparent;}
+        50%{border-color: white;}
+    }
+
+    .hero-container p{
+        text-align: justify;
+        font-size: 2.4vw;
+        /* background-color: #fff; */
+        color: burlywood;
+        padding: 4px 10px;
+        border-radius: 8px;
+        margin-top: 0.6vh; 
+        font-family: 'helvetica';
+    }
+
+    /* styling for services */
+    .service-title{
+        text-align: center;
+        font-size: 42px;
+    }
+    .service-container{
+        width: 100%;
+        height: 38vw;
+        /* background-color: gray; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2% 0;
+        margin-bottom: 5%;
+        animation: demo 5s;
+    }
+    .service-card{
+        width: 30%;
+        height: 100%;
+        margin: 0 1%;
+        padding-bottom: 20px;
+        /* background-color: gainsboro; */
+        display: flex;
+        flex-direction: column;
+        transition: all .4s ease-in-out;
+    }
+
+    .service-card:hover{
+        transform: scale(1.05);
+        box-shadow: 0 10px 14px 0 rgba(0, 0, 0, 0.24);
+        color:var(--tertiary);
+    }
+
+    .service-img{
+        width: 100%;
+        height: 65%;
+        /* background-color: white; */
+    }
+    div.img-1, div.img-2, div.img-3{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: .4s ease-in-out 0s;
+    }
+    .img-1{background: url(../image/website-design-thumb.jfif);}
+    .img-2{background: url(../image/graphic-design-thumb.jfif);}
+    .img-3{background: url(../image/content-creation-thumb.jfif);}
+    
+    .service-information{
+        width: 90%;
+        padding: 2vw;
+        margin: 0 auto;
+        height: 35%;
+        /* background-color: silver; */
+    }
+    .service-information p{
+        color: var(--textSecondary);
+    }
+    .service-button{
+        padding: 10px;
+        border: none;
+        background-color: #4361ee;
+        color: #fff;
+        font-weight: bold;
+        transition: .4s ease-in-out 0s;
+        font-family: 'DM Sans', sans-serif;
+    }
+    .service-button:hover{
+        background-color: var(--tertiary);
+        border-radius: 4px;
+    }
+
+    /* styling for quote */
+    .quote-container{
+        width: 100%;
+        background-color: var(--secondary);
+        margin-bottom: 5%;
+        text-align: center;
+        padding: 2% 0;
+    }
+
+    p.quote-txt{
+        padding: 0 20%;
+        font-family: 'Playfair display';
+        font-size: 2.5vw;
+        margin-top: -0.2vh;
+    }
+
+    .profile-img{
+        margin: 0 auto;
+        width: 65px; /*fixed size*/
+        height: 65px;
+        background-image: url(../image/avatar.jpeg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 100%;
+    }
+    p.profile-name{
+        color: gray;
+        font-size: 1.2vw;
+    }
+
+    /* styling for about */
+    .about{
+        width: 100%;
+        display: flex;
+        height: 32vw;
+        justify-content: center;
+        align-items: center;
+        /* background-color: gray; */
+        padding: 2% 0;
+        margin-bottom: 5%
+    }
+
+    .about-container{
+        width: 40%;
+        height: 90%;
+        padding: 2.5vw 0;
+        transition: .4s ease-in-out 0s;
+        /* background-color: gainsboro; */
+    }
+    .about-container:hover{
+        color: var(--tertiary);
+    }
+    .about-pre-title{
+        font-size: 1.5vw;
+        font-weight: lighter;
+        color: var(--textSecondary);
+        /* margin-top: 8.5vh; */
+        /* margin-bottom: -1.8vw; */
+    }
+
+    .about-title{
+        font-size: 2.5vw;
+        /* margin-bottom: 2vh; */
+    }
+
+    p.about-txt{
+        font-size: 24px;
+        margin-bottom: 6vh;
+        color: var(--textSecondary);
+    }
+    a.about-a{
+        text-decoration: none;
+    }
+    button.about-link{
+        display: inline;
+        border: none;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 24px;
+        text-align: center;
+        padding: 0.8vw;
+        margin: 0 1vw;
+        border: 1px solid var(--logo);
+        border-radius: 0.4vw;
+        color: var(--logo);
+        transition: .2s ease-in-out 0s;        
+    }
+
+    .about-link:hover{
+        background-color: var(--tertiary);
+        border: none;
+        color: #fff;
+        box-shadow: 0 10px 14px rgba(0,0,0,0.24);
+        transform: scale(0.9);
+    }
+
+    .about-img{
+        width: 40% ;
+        height: 100%;
+        /* background-color: gainsboro; */
+        background-image: url(../image/ai5.jfif);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-left: 20px;
+    }
+
+    /* styling for question */
+    .question{
+        width: 100%;
+        height: 46vw; 
+        /* background-color: gray; */
+        background-image: url(../image/peak.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        margin-bottom: 5%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;    
+    }
+        
+    .question-container{
+        margin-top: -2vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        width: 40%;
+        height: 30%;
+        /* background-color: burlywood; */
+    }
+
+    .question-title{
+        font-family: 'Playfair display';
+        font-weight: bold;
+        color: #fff;
+        /* background-color: aqua; */
+        font-size: 5.5vw;
+        font-weight: 600;
+        /* margin-top: 2vh; */
+    }
+
+    .question-txt{
+        font-size: 2.1vw;
+        line-height: 2.1vw;
+        margin-top: -2.1vw ;
+        text-align: justify;
+        color: #fff;
+        /* background-color: aliceblue; */
+    }
+    .question-a{text-decoration: none;}
+    .question-link{
+        display: inline-block;
+        margin-top: 2vh auto;
+        border: none;
+        font-size: 20px;
+        font-family: 'DM Sans', sans-serif;
+        color: #000;
+        background-color: #fff;
+        color: var(--logo);
+        padding: 0.8vw;
+        border-radius: 0.4vw;
+        text-decoration: none;
+        transition: .2s ease-in-out 0s;
+    }
+    .question-link:hover{
+        background-color: var(--tertiary);
+        color: #fff;
+        transform: scale(1.1);
+        box-shadow: 0 12px 16px 0 rgba(255, 255, 255, 0.24), 0 17px 50px 0 rgba(255, 255, 255, 0.19);
+    }
+
+    /* styling for footer */
+    footer{
+        width: 100%;
+        /* background-color: gray; */
+        padding: 3.4vw 0;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        /* background-color: aquamarine; */
+    }
+
+    .tentang, .footer-copyright{
+        font-family: 'Helvetica';
+        font-style: italic;
+        color: gray;
+        font-size: 18px;
+    }
+    .tentang{margin-left: 4vw;}
+    .footer-copyright{margin-right: 4vw;}
+    
+
+
+    /*responsive style for laptop desktop*/
+    @media screen and (max-width: 2560px) {
+        /* nav */
+        .hamburger-menu{
+            display: none;
+        }
+        /* service */
+        hr{
+            margin-top: -5vh;
+        }
+        .service-container{
+            height: 42vw;  
+            font-size: 1.6vw;
+        }
+
+        /* quote */
+        .profile-img{
+            width: 75px;
+            height: 75px;
+        }
+
+        /* about */
+        .about{
+            height: 38vw;
+            /* background-color: aqua;x */
+        }
+
+        .about-txt{
+            font-size: 2vw;
+        }
+
+        /* question */
+        .question{
+            height: 28vw;
+        }
+
+        h1.question{
+            font-size: 3.8vw;
+            margin-top: -0.8vh;
+            margin-bottom: -1.2vh;
+        }
+
+        p.question-txt{
+            font-size: 2vw;
+            margin-bottom: 1.4vw;
+            line-height: 1.8vw;
+        }
+
+        a.question-link{
+            font-size: 1.8vw;
+        }
+
+        /* footer */
+        p.footer-logo{
+            font-size: 1.4vw;
+        }
+
+        p.footer-copyright{
+            margin-top: -8px;
+            font-size: 1.4vw;
+        }
+    }
+    /* laptop responsive base  */
+
+    /*responsive style for laptop L*/
+    @media screen and (max-width:1024px) {
+        /* nav */
+        .hamburger-menu{
+            display: none;
+        }
+        /* service */
+        .service-container{
+            height: 38vw;
+        }
+
+        /* about */
+        .about-container{
+            height: 38vw;
+        }
+
+        /* question */
+        .question-container{
+            /* background-color: burlywood; */
+            height: 28vw    
+        }
+
+        h1.question-title{
+            font-size: 3.8vw;
+            margin-bottom: -0.8vw;
+        }
+
+        p.question-txt{
+            font-size: 2vw;
+            line-height: 1.8vw;
+            margin-top: 1.8vw;
+        }
+
+        a.question-link{
+            font-size: 1.8vw;
+        }
+
+    }
+    /*responsive style for tablet*/
+    @media screen and (max-width:768px) {
+        /* nav */
+        .hamburger-menu{
+            display: none;
+        }
+        /* hero */
+            /* already responsive                                           */
+        /* services */
+        hr{
+            margin-top: -3.2vh;
+        }
+        
+        .service-container{
+            height: 42vw;
+        }
+        /*quote*/
+        div.profile-img{
+            width: 55px;
+            height: 55px;
+            /* background-color: red; */
+        }
+        /* about */
+        .about{
+            height: 42vw;
+        }
+
+        /* question */
+        .question{
+            height: 28vw;
+        }
+
+        p.question-txt{
+            line-height: 3vh;
+            margin-top: 2.1vw;
+            /* background-color: burlywood; */
+        }
+        a.question-link {
+            border-radius: 0.4vw;
+        }
+        /* footer */
+            /* already responsive */
+        
+    }
+
+    /*responsive style for mobile*/
+    @media screen and (max-width:425px){
+        /* navabar */
+        /* header */
+        .header{
+            height: 100vh;
+        }
+        p.logo-txt{
+            font-size: 6vw;
+        }
+        span.logo{
+            border-radius: 9px 2px 4px 2px;
+        }
+        span.hamburger-menu{
+            font-size: 6vw;
+        }
+
+        /* navabar */
+        .hamburger-menu{
+            display: block;
+        }
+        .menu{
+        display: none;
+        }
+
+        /* hero */
+        .hero-container{
+            /* background-color: #4361ee; */
+            margin-top: -10px;
+        }
+        .pre-title{
+            font-size: 5vw;
+        }
+        .title{
+            font-size: 6.8vw;
+        }
+        p.hero-txt{
+            font-size: 10px;
+        }
+
+        /* services */
+        h1.service-title{
+            font-size: 24px;
+        }
+
+        hr{
+            margin-top: -3.1vw;
+        }
+
+        .service-container{
+            height: 1600px;
+            flex-direction: column;
+        }
+
+        .service-card{
+            width: 90%;
+            height: 100%;
+            margin-bottom: 60px;
+        }
+
+        .service-img{
+            height: 70%;
+        }
+
+        .service-information{
+            /* background-color: gainsboro; */
+            width: 95%;
+            font-size: 4.8vw;
+        }
+
+        /* quote */
+        .quote-container{
+            padding: 6% 0;
+        }
+
+        p.quote-txt{
+            padding: 0 10%;
+            font-size: 6vw;
+            line-height: 1.4;
+        }
+        div.profile-img{
+            width: 55px;
+            height: 55px;
+        }
+        p.profile-name{
+            font-size: 2.8vw;
+        }
+
+        /* about */
+        .about{
+            height: 85vw;
+            flex-direction: column-reverse;
+            /* background-color: gainsboro; */
+        }
+
+        .about-container{
+            height: 100%;
+            width: 90%;
+            margin: 0 auto;
+            /* background-color: gainsboro; */
+        }
+
+        .about-img{
+            display: none;
+        }
+        p.about-pre-title{
+            font-size: 4vw;
+            margin-top: 5vw;
+            margin-bottom: -4.5vw;
+        }
+
+        h3.about-title{
+            font-size: 6.2vw;
+        }
+
+        p.about-txt{
+            font-size: 4.4vw;
+            margin-bottom: 8vw;
+        }
+
+        a .about-link{
+            font-size: 14px;
+            border-radius: 5px;
+            padding: 1.2vw;
+        }
+
+        /* question */
+        .question{
+            height: 55vw;
+        }
+
+        .question-container{
+            /* background-color: burlywood; */
+            width: 85%;
+            height: 70%;
+        }
+
+        h1.question-title{
+            font-size: 6.8vw;
+        }
+
+        p.question-txt{
+            font-size: 14px;
+            line-height: 14px;
+        }
+
+        a .question-link{
+            font-size: 14px;
+            padding: 1.2vw;
+            border-radius: 5px;
+        }
+
+        /* footer */
+        footer{
+            /* background-color: #1d3557; */
+            flex-direction: column;
+            text-align: center;
+        }
+        .tentang, .footer-copyright{
+            font-size: 12px;
+            padding: 1.4vw 0;
+        }  
+    }
