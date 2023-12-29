@@ -11,7 +11,7 @@
 </head>
 <body>
 
-
+    <!-- PAYMENT POP UP -->
     <div class="payment-modal" id="paymentModal">
         <div class="wrapper">
             <div class="form-container">
@@ -36,7 +36,7 @@
                     <ul>
                         <li>Kartu kredit/debit: Mohon cantumkan detail kartu pembayaran, seperti nomor kartu, tanggal kedaluwarsa, dan kode CVV/CVC.</li>
                     </ul>
-                    <button onclick="showFirstForm()">Mulai</button>
+                    <button onclick="showFirstForm()" class="checkout">Mulai</button>
                 </div>
     
                 <!-- Halaman 1 - Detail Kontak -->
@@ -47,7 +47,7 @@
                     <input type="text" id="nama" placeholder="Nama" required>
                     <input type="email" id="email" placeholder="Email" required>
                     <input type="number" id="telepon" placeholder="Nomor Telepon" required>
-                    <button type="button" onclick="validatePage1()">Next</button>
+                    <button type="button" onclick="validatePage1()" class="next">Next</button>
                 </form>
     
                 <!-- Halaman 2 - Detail Proyek -->
@@ -56,7 +56,7 @@
                     <p>Tolong berikan deskripsi proyek yang jelas dan lengkap untuk memahami kebutuhan Anda dengan baik. Sertakan informasi tentang tujuan dari proyek ini dan spesifikasi fitur tambahan yang Anda perlukan. Semakin detail deskripsi proyeknya, semakin baik kami dapat menyesuaikan solusi dengan kebutuhan Anda. Terima kasih atas kerjasamanya!</p>
                     <textarea id="deskripsiProyek" placeholder="Deskripsi Proyek" required></textarea>
                     <input type="text" id="fiturKhusus" placeholder="Fitur Khusus yang Dibutuhkan">
-                    <button type="button" onclick="validatePage2()">Next</button>
+                    <button type="button" onclick="validatePage2()" class="next">Next</button>
                 </form>
     
                 <!-- Halaman 3 - Detail Pembayaran -->
@@ -76,19 +76,21 @@
                         <input type="password" id="cvv" placeholder="CVV" required>
                     </div>
                     <label class="checkbox-label" style="color: gray;">
-                        <input type="checkbox" id="persetujuan" required>
+                        <input type="checkbox" id="persetujuan" required class="checkbox">
                         Saya telah mengisi data dengan benar.
                     </label>
-                    <button type="submit" onclick="showSuccess()">Submit</button>
+                    <button type="submit" onclick="showSuccess()" class="next">Submit</button>
                 </form>
             </div>
     
             <div class="order-details" id="orderDetails">
-                <i class="fa-solid fa-circle-check" style="font-size: 48px; color: green;"></i>
-                <h2>Berhasil</h2>  
-                <p>Terima kasih! Pesanan Anda berhasil dikirim. Kami akan menghubungi Anda segera.</p>
-                <!-- Di sini Anda dapat menambahkan informasi terkait pesanan yang berhasil dikirim -->
-                <div class="countdown" id="countdown"></div>
+                <div class="od-box">
+                    <i class="fa-solid fa-circle-check" style="font-size: 48px; color: green;"></i>
+                    <h2>Berhasil</h2>  
+                    <p>Terima kasih! Pesanan Anda berhasil dikirim. Kami akan menghubungi Anda segera.</p>
+                    <!-- Di sini Anda dapat menambahkan informasi terkait pesanan yang berhasil dikirim -->
+                    <div class="countdown" id="countdown"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -110,7 +112,7 @@
             <div class="content-information">
                 <h2 class="content-h2">Kenapa Memilih Kami?</h2>
                 <p class="content-p">
-                    Kami adalah ahli dalam merancang pengalaman online yang luar biasa. Dengan perpaduan kreativitas dan teknologi terkini, 
+                        Kami adalah ahli dalam merancang pengalaman online yang luar biasa. Dengan perpaduan kreativitas dan teknologi terkini, 
                     kami menciptakan website yang tidak hanya memikat mata, tetapi juga memaksimalkan hasil bisnis Anda. Apakah Anda membutuhkan 
                     tampilan yang responsif untuk menghadirkan merek Anda di seluruh perangkat, navigasi yang mudah dipahami, atau strategi SEO 
                     yang kuat untuk meningkatkan visibilitas online, kami memiliki alat dan keahlian yang diperlukan. Bersama-sama, 
@@ -137,8 +139,8 @@
                         </ul>
                     </div>
                     <div class="items">
-                        <h2 class="web-design-h2">Tipe Website</h2> <!-- tipe website -->
-                        <ul class="web-design-ul">
+                        <h2 class="content-h2">Tipe Website</h2> <!-- tipe website -->
+                        <ul class="content-ul">
                             <li>Portofolio</li>
                             <li>Personal</li>
                             <li>E-Commerence</li>

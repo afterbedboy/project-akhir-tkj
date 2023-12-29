@@ -175,7 +175,14 @@ button:hover {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
+.od-box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .order-details.active {
     display: block;
 }
@@ -199,4 +206,90 @@ button:hover {
 .order-details:hover {
     transform: scale(1.02);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Media query untuk desktop */
+@media (min-width: 1025px) {
+}
+
+/* Media query untuk tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* Media query untuk perangkat mobile */
+@media (max-width: 767px) {
+    /* FORM WARN */
+    .info-section h2{
+        font-size: 18px;
+    }
+    .info-section p{
+        font-size: 12px;
+    }
+    .info-section h3{
+        font-size: 14px;
+        margin-top: -8px;
+    }
+    .info-section ul li{
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .form-container{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+    }
+    .info-section button{
+        font-size: 12px;
+    }
+
+    /* FORM PAGE */
+    .form-page h2{
+        font-size: 20px;
+    }
+    .form-page h2 i{
+        font-size: 2    0px;
+    }
+    .form-page p{
+        font-size: 14px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="number"],
+    input[type="password"],
+    textarea,
+    select {
+        border: 1px solid #ccc;
+        font-size: 14px;
+    }
+    .checkbox-label{
+        font-size: 14px;
+    }
+    .form-page .next{
+        font-size: 14px;
+    }
+
+    /* ORDER DETAILS */
+    .order-details{
+        width: 100%;
+        height: 100vh;
+        padding: 0px;
+        margin-top: 0px;
+        border-radius: 0px;
+    }
+    .od-box{
+        width: 80%;
+    }
+    .order-details h2{
+        font-size: 16px;
+    }
+    .order-details p{
+        font-size: 14px;
+    }
+    .countdown{
+        font-size: 14px;
+    }
 }

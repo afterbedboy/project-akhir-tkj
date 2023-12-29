@@ -94,12 +94,13 @@ div.content-creation-img{
     height: 600px;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     /* background-size: cover; */
 }
 div.web-design-img{background-image: url(../img/web-design.jpg);}
 div.content-creation-img{background-image: url(../img/content-creation.jpg);}
 div.graphic-design-img{background-image: url(../img/graphic-design.jpg);}
-.column-items{
+.column-items{ /* ini row yang di reverse*/
     height: 150px;
     /* background-color: gray; */
     display: flex;
@@ -206,3 +207,101 @@ hr{
 }
 .tentang{margin-left: 4vw;}
 .footer-copyright{margin-right: 4vw;}
+
+/* Media query untuk desktop */
+@media (min-width: 1025px) {
+    .hamburger-menu{
+        display: none;
+    }
+    .menu{
+        display: block;
+    }
+}
+
+/* Media query untuk tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .hamburger-menu{
+        display: block;
+    }
+    .menu{
+        display: none;
+    }
+}
+
+/* Media query untuk perangkat mobile */
+@media (max-width: 767px) {
+    /* navabar */
+    i.fa-arrow-left{
+        font-size: 20px;
+    }
+
+    p.logo-txt{
+        font-size: 6vw;
+    }
+    span.logo{
+        border-radius: 9px 2px 4px 2px;
+    }
+    
+    /* content */
+    .content h1{
+        font-size: 24px;
+    }
+    div.web-design-img{
+        height: 200px;
+        margin-bottom: 20px;
+    }
+    h2.content-h2{
+        font-size: 18px;
+    }
+    p.content-p{
+        font-size: 14px;
+        text-align: justify;
+        text-indent: 20px;
+    }
+    ul li{
+        font-size: 14px;
+    }
+    .fa-circle-check{
+        font-size: 14px;
+    }
+    /* column to row */
+    .column-items{
+        flex-direction: column;
+        height: auto;
+    }
+
+    /* offer */
+    .offer{
+        height: 300vh;
+    }
+    .offer p{
+        font-size: 14px;
+    }
+    .offer-card{
+        margin: 20px 0px;
+        padding: 20px 0px;
+        width: 90%;
+        border-radius: 40px 0 20px 0;
+    }
+    .offer-container{
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    .offer-h2{
+        font-size: 16px;
+    }
+    .offer-list > p{
+        font-size: 14px;
+    }
+
+    /* footer */
+    footer{
+        /* bacfkground-color: #1d3557; */
+        flex-direction: column;
+        text-align: center;
+    }
+    .tentang, .footer-copyright{
+        font-size: 12px;
+        padding: 1.4vw 0;
+    }    
+}
